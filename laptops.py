@@ -20,12 +20,40 @@ class Laptop(object):
             return 30 * self.battery_life
 
     def purchase_price(self):
-
+        """checks if laptop was sold and if it was returns the resale price"""
         if self.sold_on is None:
             return 'Not yet sold'
         else:
             return 0.8 * self.initial_sale_price
 
     @abc.abstractmethod
-    def book_type(self):
+    def Laptop_type(self):
+        """provides type of laptop"""
         pass
+
+
+class DELL(Laptop):
+    """overriding price of the dell laptop"""
+    initial_sale_price = 45000
+    battery_life = 4
+
+    def Laptop_type(self):
+        return 'Dell'
+
+
+class HP(Laptop):
+    """overriding price of the HP laptop"""
+    initial_sale_price = 9000
+    battery_life = 6
+
+    def Laptop_type(self):
+        return 'HP'
+
+
+class LENOVO(Laptop):
+    """overriding price of the lenovo laptop"""
+    initial_sale_price = 15000
+    battery_life = 5
+
+    def Laptop_type(self):
+        return 'Lenovo'
