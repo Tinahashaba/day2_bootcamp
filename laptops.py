@@ -18,3 +18,14 @@ class Laptop(object):
             return 'Already sold'
         else:
             return 30 * self.battery_life
+
+    def purchase_price(self):
+
+        if self.sold_on is None:
+            return 'Not yet sold'
+        else:
+            return 0.8 * self.initial_sale_price
+
+    @abc.abstractmethod
+    def book_type(self):
+        pass
